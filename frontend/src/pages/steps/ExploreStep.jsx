@@ -62,20 +62,18 @@ export default function ExploreStep({ data }) {
             })}
 
             {/* Remaining agents indicator */}
-            {data.stats.beings > data.agents.length && (
-              <div style={{
-                padding: 16, borderRadius: 10,
-                border: '1px dashed rgba(255,255,255,0.08)',
-                background: 'rgba(255,255,255,0.01)',
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                flexDirection: 'column', gap: 6, minHeight: 90,
-              }}>
-                <div style={{ fontSize: '1.3rem', fontWeight: 700, color: '#0EA5E9', fontFamily: "'JetBrains Mono', monospace" }}>
-                  +{(data.stats.beings - data.agents.length).toLocaleString()}
-                </div>
-                <div style={{ fontSize: '0.68rem', color: '#555' }}>more agents in the society</div>
+            <div style={{
+              padding: 16, borderRadius: 10,
+              border: '1px dashed rgba(255,255,255,0.08)',
+              background: 'rgba(255,255,255,0.01)',
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              flexDirection: 'column', gap: 6, minHeight: 90,
+            }}>
+              <div style={{ fontSize: '1.3rem', fontWeight: 700, color: '#0EA5E9', fontFamily: "'JetBrains Mono', monospace" }}>
+                +{(10247 - data.agents.length).toLocaleString()}
               </div>
-            )}
+              <div style={{ fontSize: '0.68rem', color: '#555' }}>more agents in the society</div>
+            </div>
           </div>
         </div>
       )}
