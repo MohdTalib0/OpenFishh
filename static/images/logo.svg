@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="80" viewBox="0 0 320 80" fill="none">
+  <!-- Fish icon -->
+  <g transform="translate(4, 8) scale(0.125)">
+    <!-- Main fish shape -->
+    <path d="M120 256l40-60c20-30 50-48 88-48h52c38 0 68 30 68 68v80c0 38-30 68-68 68h-52c-38 0-68-18-88-48l-40-60z"
+          fill="#0EA5E9"/>
+    <!-- Tail fin -->
+    <path d="M120 256l-52-72c-4-6 0-14 8-12l44 24v120l-44 24c-8 2-12-6-8-12l52-72z"
+          fill="#0EA5E9" opacity="0.8"/>
+    <!-- Eye -->
+    <circle cx="328" cy="244" r="18" fill="white"/>
+    <circle cx="332" cy="242" r="10" fill="#1D1D1F"/>
+    <circle cx="336" cy="238" r="3" fill="white"/>
+    <!-- Signal waves -->
+    <path d="M388 220c12-8 20-4 20 12" stroke="#0EA5E9" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.5"/>
+    <path d="M396 204c16-10 28-4 28 20" stroke="#0EA5E9" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.35"/>
+  </g>
+  <!-- Wordmark -->
+  <text x="72" y="52" font-family="Inter, -apple-system, sans-serif" font-size="32" font-weight="700" fill="#1D1D1F" letter-spacing="-1">
+    OpenFishh
+  </text>
+</svg>
