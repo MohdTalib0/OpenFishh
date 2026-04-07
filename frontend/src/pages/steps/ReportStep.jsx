@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react'
 import ReactMarkdown from 'react-markdown'
 import { FileText, Search, BookOpen, Brain, Zap, CheckCircle, Download } from 'lucide-react'
+import jsPDF from 'jspdf'
+import html2canvas from 'html2canvas'
 
 const QUERY = 'What are the current cyber threats targeting financial institutions?'
 
@@ -137,26 +139,37 @@ export default function ReportStep({ data, onComplete, completed }) {
     return () => { if (abortRef.current) abortRef.current.abort() }
   }, [])
 
-  function downloadPDF() {
-    const html = `<!DOCTYPE html><html><head><meta charset="utf-8"><title>OpenFishh Blueprint Report</title>
-      <style>
-        body { font-family: 'Georgia', 'Times New Roman', serif; max-width: 700px; margin: 40px auto; padding: 0 24px; color: #1a1a1a; line-height: 1.7; font-size: 14px; }
-        h1 { font-size: 22px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 4px; font-family: 'Helvetica Neue', Arial, sans-serif; }
-        h2 { font-size: 16px; font-weight: 600; margin: 28px 0 8px; font-family: 'Helvetica Neue', Arial, sans-serif; color: #333; }
-        p { margin: 0 0 12px; }
-        em { color: #666; }
-        strong { color: #111; }
-        hr { border: none; border-top: 1px solid #ddd; margin: 24px 0; }
-        li { margin-bottom: 4px; }
-        a { color: #0066cc; }
-      </style></head><body>${reportRef.current?.innerHTML || ''}</body></html>`
-    const blob = new Blob([html], { type: 'text/html' })
-    const url = URL.createObjectURL(blob)
-    const a = document.createElement('a')
-    a.href = url
-    a.download = 'OpenFishh-Blueprint-Report.html'
-    a.click()
-    URL.revokeObjectURL(url)
+  async function downloadPDF() {
+    if (!reportRef.current) return
+    const canvas = await html2canvas(reportRef.current, {
+      backgroundColor: '#ffffff',
+      scale: 2,
+      scrollY: -window.scrollY,
+      useCORS: true,
+      height: reportRef.current.scrollHeight,
+      windowHeight: reportRef.current.scrollHeight,
+    })
+    const imgData = canvas.toDataURL('image/png')
+    const pdf = new jsPDF('p', 'mm', 'a4')
+    const pdfW = pdf.internal.pageSize.getWidth()
+    const pdfH = pdf.internal.pageSize.getHeight()
+    const margin = 10
+    const imgW = pdfW - margin * 2
+    const imgH = (canvas.height * imgW) / canvas.width
+    let pos = margin
+
+    pdf.addImage(imgData, 'PNG', margin, pos, imgW, imgH)
+
+    // Add pages if content overflows
+    let remaining = imgH - (pdfH - margin * 2)
+    while (remaining > 0) {
+      pdf.addPage()
+      pos = margin - (imgH - remaining)
+      pdf.addImage(imgData, 'PNG', margin, pos, imgW, imgH)
+      remaining -= (pdfH - margin * 2)
+    }
+
+    pdf.save('OpenFishh-Blueprint-Report.pdf')
   }
 
   const visibleReport = REPORT_MD.slice(0, visibleChars)
