@@ -21,6 +21,10 @@
 
 <img src="static/images/screenshot-landing.png" alt="OpenFishh Landing Page" width="100%" />
 
+[![Watch the Demo](https://img.youtube.com/vi/GcXunKN5XUQ/maxresdefault.jpg)](https://youtu.be/GcXunKN5XUQ)
+
+**[Watch the 2-minute demo](https://youtu.be/GcXunKN5XUQ)** -- see the agent society, belief graph, and intelligence reports in action.
+
 </div>
 
 ---

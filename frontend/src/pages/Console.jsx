@@ -519,6 +519,34 @@ function HeroSection({ onStart }) {
         </div>
       </section>
 
+      {/* ========== VIDEO DEMO ========== */}
+      <section style={{ width: '78%', maxWidth: 800, margin: '0 auto', padding: '0 24px 64px', textAlign: 'center' }}>
+        <div style={{ fontSize: '0.68rem', fontWeight: 600, color: '#555', letterSpacing: '0.12em', marginBottom: 10 }}>SEE IT IN ACTION</div>
+        <h2 style={{ fontSize: 'clamp(1.5rem, 3.5vw, 2.2rem)', fontWeight: 700, color: '#fff', margin: '0 0 32px', letterSpacing: '-0.02em' }}>
+          Watch the Demo
+        </h2>
+        <div style={{
+          position: 'relative', width: '100%', paddingBottom: '56.25%',
+          borderRadius: 12, overflow: 'hidden',
+          border: '1px solid rgba(255,255,255,0.08)',
+          boxShadow: '0 0 60px rgba(14,165,233,0.08)',
+        }}>
+          <iframe
+            src="https://www.youtube.com/embed/GcXunKN5XUQ"
+            title="OpenFishh Demo"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            style={{
+              position: 'absolute', top: 0, left: 0,
+              width: '100%', height: '100%', border: 'none',
+            }}
+          />
+        </div>
+        <p style={{ fontSize: '0.78rem', color: '#555', marginTop: 16 }}>
+          2-minute walkthrough of the agent society, belief graph, and intelligence reports.
+        </p>
+      </section>
+
       {/* ========== USE CASES (3, not 6) ========== */}
       <section id="use-cases" style={{ width: '78%', maxWidth: 1100, margin: '0 auto', padding: '0 24px 64px', textAlign: 'center', scrollMarginTop: 64 }}>
         <div style={{ fontSize: '0.68rem', fontWeight: 600, color: '#555', letterSpacing: '0.12em', marginBottom: 10 }}>USE CASES</div>
