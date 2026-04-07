@@ -15,6 +15,7 @@
 [![Node.js 18+](https://img.shields.io/badge/Node.js-18+-339933?logo=nodedotjs&logoColor=white)](https://nodejs.org)
 [![Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![Live Demo](https://img.shields.io/badge/Demo-openfishh.com-0EA5E9)](https://openfishh.com)
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/MohdTalib0/OpenFishh)
 
 [Live Demo](https://openfishh.com) | [Documentation](https://deepwiki.com/MohdTalib0/OpenFishh) | [Report Bug](https://github.com/MohdTalib0/OpenFishh/issues)
 
