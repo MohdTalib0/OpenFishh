@@ -25,40 +25,58 @@ export default function ExploreStep({ data }) {
 
       {/* Agents */}
       {tab === 'agents' && (
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(220px, 100%), 1fr))', gap: 10 }}>
-          {data.agents.map((a, i) => {
-            const color = ROLE_COLORS[a.role] || '#666'
-            return (
-              <div key={i} style={{
-                padding: 16, borderRadius: 10,
-                border: '1px solid rgba(255,255,255,0.06)',
-                background: 'rgba(255,255,255,0.02)',
-              }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 10 }}>
-                  <div style={{
-                    width: 30, height: 30, borderRadius: '50%',
-                    background: `${color}18`, display: 'flex',
-                    alignItems: 'center', justifyContent: 'center',
-                    fontSize: '0.7rem', fontWeight: 700, color,
-                  }}>
-                    {a.name.charAt(0)}
-                  </div>
-                  <div>
-                    <div style={{ fontSize: '0.82rem', fontWeight: 600, color: '#fff' }}>{a.name}</div>
-                    <div style={{ display: 'flex', gap: 4, alignItems: 'center' }}>
-                      <span style={{ fontSize: '0.55rem', padding: '1px 4px', borderRadius: 3, background: `${color}18`, color, fontWeight: 600 }}>{a.role}</span>
-                      <span style={{ fontSize: '0.58rem', color: '#555' }}>{a.beat?.replace(/_/g, ' ')}</span>
+        <div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(220px, 100%), 1fr))', gap: 10 }}>
+            {data.agents.map((a, i) => {
+              const color = ROLE_COLORS[a.role] || '#666'
+              return (
+                <div key={i} style={{
+                  padding: 16, borderRadius: 10,
+                  border: '1px solid rgba(255,255,255,0.06)',
+                  background: 'rgba(255,255,255,0.02)',
+                }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 10 }}>
+                    <div style={{
+                      width: 30, height: 30, borderRadius: '50%',
+                      background: `${color}18`, display: 'flex',
+                      alignItems: 'center', justifyContent: 'center',
+                      fontSize: '0.7rem', fontWeight: 700, color,
+                    }}>
+                      {a.name.charAt(0)}
+                    </div>
+                    <div>
+                      <div style={{ fontSize: '0.82rem', fontWeight: 600, color: '#fff' }}>{a.name}</div>
+                      <div style={{ display: 'flex', gap: 4, alignItems: 'center' }}>
+                        <span style={{ fontSize: '0.55rem', padding: '1px 4px', borderRadius: 3, background: `${color}18`, color, fontWeight: 600 }}>{a.role}</span>
+                        <span style={{ fontSize: '0.58rem', color: '#555' }}>{a.beat?.replace(/_/g, ' ')}</span>
+                      </div>
                     </div>
                   </div>
+                  <div style={{ display: 'flex', gap: 12, fontSize: '0.65rem', color: '#555' }}>
+                    <span>{a.beliefs} beliefs</span>
+                    <span>{a.articles} read</span>
+                    <span style={{ color: a.mood === 'excited' ? '#F59E0B' : a.mood === 'confident' ? '#10B981' : '#555' }}>{a.mood}</span>
+                  </div>
                 </div>
-                <div style={{ display: 'flex', gap: 12, fontSize: '0.65rem', color: '#555' }}>
-                  <span>{a.beliefs} beliefs</span>
-                  <span>{a.articles} read</span>
-                  <span style={{ color: a.mood === 'excited' ? '#F59E0B' : a.mood === 'confident' ? '#10B981' : '#555' }}>{a.mood}</span>
+              )
+            })}
+
+            {/* Remaining agents indicator */}
+            {data.stats.beings > data.agents.length && (
+              <div style={{
+                padding: 16, borderRadius: 10,
+                border: '1px dashed rgba(255,255,255,0.08)',
+                background: 'rgba(255,255,255,0.01)',
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                flexDirection: 'column', gap: 6, minHeight: 90,
+              }}>
+                <div style={{ fontSize: '1.3rem', fontWeight: 700, color: '#0EA5E9', fontFamily: "'JetBrains Mono', monospace" }}>
+                  +{(data.stats.beings - data.agents.length).toLocaleString()}
                 </div>
+                <div style={{ fontSize: '0.68rem', color: '#555' }}>more agents in the society</div>
               </div>
-            )
-          })}
+            )}
+          </div>
         </div>
       )}
 
