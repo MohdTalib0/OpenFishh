@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://openfishh.com/sitemap.xml

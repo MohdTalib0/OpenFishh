@@ -107,7 +107,7 @@ export default function Console() {
         borderBottom: '1px solid rgba(255,255,255,0.06)',
       }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
-          <img src="/icon.svg" alt="" className="console-logo" onClick={() => { setStarted(false); window.history.pushState(null, '', window.location.pathname) }} style={{ width: 22, height: 22, cursor: 'pointer' }} />
+          <img src="/icon.svg" alt="OpenFishh logo" role="button" aria-label="Back to home" className="console-logo" onClick={() => { setStarted(false); window.history.pushState(null, '', window.location.pathname) }} style={{ width: 22, height: 22, cursor: 'pointer' }} />
           <style>{`@media (max-width: 640px) { .console-logo { width: 28px !important; height: 28px !important; } }`}</style>
           <span onClick={() => { setStarted(false); window.history.pushState(null, '', window.location.pathname) }} style={{ fontSize: '0.9rem', fontWeight: 600, color: '#fff', cursor: 'pointer' }}>OpenFishh</span>
           <span className="hide-mobile" style={{
@@ -123,7 +123,7 @@ export default function Console() {
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
           <StatusDot status={stepComplete[currentStep] ? 'complete' : 'processing'} />
-          <a href="https://github.com/MohdTalib0/OpenFishh" target="_blank" rel="noopener"
+          <a href="https://github.com/MohdTalib0/OpenFishh" target="_blank" rel="noopener noreferrer"
             style={{
               display: 'flex', alignItems: 'center', gap: 5,
               padding: '5px 12px', borderRadius: 6,
@@ -287,7 +287,7 @@ function HeroSection({ onStart }) {
   return (
     <div style={{ background: '#0A0A0A', color: '#E5E5E5', fontFamily: "'Inter', system-ui, sans-serif" }}>
       {/* Navbar */}
-      <nav style={{
+      <nav aria-label="Main navigation" style={{
         position: 'sticky', top: 0, zIndex: 50,
         height: 56, background: 'rgba(10,10,10,0.92)', backdropFilter: 'blur(12px)',
         borderBottom: '1px solid rgba(255,255,255,0.06)',
@@ -324,7 +324,7 @@ function HeroSection({ onStart }) {
         </div>
 
         {/* Right: GitHub */}
-        <a href="https://github.com/MohdTalib0/OpenFishh" target="_blank" rel="noopener"
+        <a href="https://github.com/MohdTalib0/OpenFishh" target="_blank" rel="noopener noreferrer"
           style={{
             display: 'flex', alignItems: 'center', gap: 6,
             padding: '6px 16px', borderRadius: 8,
@@ -373,7 +373,7 @@ function HeroSection({ onStart }) {
             Try Live Demo
             <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 24, height: 24, borderRadius: '50%', background: '#0A0A0A', color: '#fff', fontSize: '0.82rem' }}>&rarr;</span>
           </button>
-          <a href="https://github.com/MohdTalib0/OpenFishh" target="_blank" rel="noopener" className="cta-star"
+          <a href="https://github.com/MohdTalib0/OpenFishh" target="_blank" rel="noopener noreferrer" className="cta-star"
             style={{
               display: 'flex', alignItems: 'center', gap: 10,
               padding: '16px 36px', borderRadius: 50,
@@ -416,13 +416,13 @@ function HeroSection({ onStart }) {
 
         {/* Waitlist */}
         <div style={{ textAlign: 'center', marginTop: 48 }}>
-          <h3 style={{
+          <h2 style={{
             fontStyle: 'italic', fontSize: 'clamp(1.1rem, 3vw, 1.5rem)',
             fontWeight: 600, color: '#fff', margin: '0 0 12px',
             fontFamily: "'Georgia', 'Times New Roman', serif",
           }}>
             Join the waitlist to get notified at launch!
-          </h3>
+          </h2>
           <p style={{ fontSize: '0.85rem', color: '#666', margin: '0 0 20px', lineHeight: 1.5 }}>
             The hosted edition is on its way.<br />
             Thousands of intelligent agents reading the open web and delivering intelligence to your inbox.
@@ -594,9 +594,9 @@ function HeroSection({ onStart }) {
         textAlign: 'center', padding: '48px 24px 72px',
         borderTop: '1px solid rgba(255,255,255,0.04)',
       }}>
-        <h3 style={{ fontSize: '1.4rem', fontWeight: 700, color: '#fff', margin: '0 0 20px' }}>
+        <h2 style={{ fontSize: '1.4rem', fontWeight: 700, color: '#fff', margin: '0 0 20px' }}>
           See it in action
-        </h3>
+        </h2>
 
         <div style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
           <button onClick={onStart} style={{
@@ -611,7 +611,7 @@ function HeroSection({ onStart }) {
           >
             Try Live Demo
           </button>
-          <a href="https://github.com/MohdTalib0/OpenFishh" target="_blank" rel="noopener"
+          <a href="https://github.com/MohdTalib0/OpenFishh" target="_blank" rel="noopener noreferrer"
             style={{
               display: 'flex', alignItems: 'center', gap: 8,
               padding: '14px 36px', borderRadius: 10,
@@ -634,7 +634,7 @@ function HeroSection({ onStart }) {
           {/* Brand */}
           <div style={{ maxWidth: 320 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 14 }}>
-              <img src="/icon.svg" alt="OpenFishh" style={{ width: 28, height: 28 }} />
+              <img src="/icon.svg" alt="OpenFishh logo" style={{ width: 28, height: 28 }} />
               <span style={{ fontWeight: 700, fontSize: '1rem', color: '#fff' }}>OpenFishh</span>
             </div>
             <p style={{ fontSize: '0.82rem', color: '#555', lineHeight: 1.6, margin: 0 }}>
@@ -655,10 +655,10 @@ function HeroSection({ onStart }) {
             <div>
               <div style={{ fontSize: '0.68rem', fontWeight: 600, color: '#666', letterSpacing: '0.1em', marginBottom: 14 }}>COMMUNITY</div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-                <a href="https://github.com/MohdTalib0/OpenFishh" target="_blank" rel="noopener" style={{ color: '#777', textDecoration: 'none', fontSize: '0.82rem' }}>GitHub</a>
-                <a href="https://discord.gg/jMwfepkD" target="_blank" rel="noopener" style={{ color: '#777', textDecoration: 'none', fontSize: '0.82rem' }}>Discord</a>
-                <a href="https://github.com/MohdTalib0/OpenFishh/issues" target="_blank" rel="noopener" style={{ color: '#777', textDecoration: 'none', fontSize: '0.82rem' }}>Issues</a>
-                <a href="https://deepwiki.com/MohdTalib0/OpenFishh" target="_blank" rel="noopener" style={{ color: '#777', textDecoration: 'none', fontSize: '0.82rem' }}>Docs</a>
+                <a href="https://github.com/MohdTalib0/OpenFishh" target="_blank" rel="noopener noreferrer" style={{ color: '#777', textDecoration: 'none', fontSize: '0.82rem' }}>GitHub</a>
+                <a href="https://discord.gg/jMwfepkD" target="_blank" rel="noopener noreferrer" style={{ color: '#777', textDecoration: 'none', fontSize: '0.82rem' }}>Discord</a>
+                <a href="https://github.com/MohdTalib0/OpenFishh/issues" target="_blank" rel="noopener noreferrer" style={{ color: '#777', textDecoration: 'none', fontSize: '0.82rem' }}>Issues</a>
+                <a href="https://deepwiki.com/MohdTalib0/OpenFishh" target="_blank" rel="noopener noreferrer" style={{ color: '#777', textDecoration: 'none', fontSize: '0.82rem' }}>Docs</a>
               </div>
             </div>
           </div>
@@ -671,9 +671,9 @@ function HeroSection({ onStart }) {
           flexWrap: 'wrap', gap: 12,
         }}>
           <span style={{ fontSize: '0.72rem', color: '#444' }}>
-            MIT License. Built by <a href="https://github.com/MohdTalib0" target="_blank" rel="noopener" style={{ color: '#666', textDecoration: 'none' }}>@MohdTalib0</a>
+            MIT License. Built by <a href="https://github.com/MohdTalib0" target="_blank" rel="noopener noreferrer" style={{ color: '#666', textDecoration: 'none' }}>@MohdTalib0</a>
           </span>
-          <a href="https://github.com/MohdTalib0/OpenFishh" target="_blank" rel="noopener"
+          <a href="https://github.com/MohdTalib0/OpenFishh" target="_blank" rel="noopener noreferrer"
             style={{
               display: 'flex', alignItems: 'center', gap: 6,
               padding: '5px 14px', borderRadius: 6,
@@ -777,6 +777,7 @@ function WaitlistForm() {
       <input
         type="email" value={email} onChange={e => setEmail(e.target.value)}
         placeholder="Enter your email" required
+        aria-label="Email address for waitlist"
         style={{
           flex: 1, padding: '12px 16px', borderRadius: 8,
           border: '1px solid rgba(255,255,255,0.15)', background: 'rgba(255,255,255,0.05)',
