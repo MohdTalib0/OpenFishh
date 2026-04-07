@@ -124,6 +124,7 @@ export default function ReportStep({ data, onComplete, completed }) {
     await delay(400, s); if (s.aborted) return
     setPhase('done')
     if (isMobile()) setTimelineOpen(false)
+    if (reportRef.current) reportRef.current.scrollTop = 0
   }
 
   // Track visibleSteps in a ref so the typing loop can read it
