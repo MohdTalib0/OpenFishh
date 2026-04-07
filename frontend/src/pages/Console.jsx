@@ -656,8 +656,9 @@ function HeroSection({ onStart }) {
               <div style={{ fontSize: '0.68rem', fontWeight: 600, color: '#666', letterSpacing: '0.1em', marginBottom: 14 }}>COMMUNITY</div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
                 <a href="https://github.com/MohdTalib0/OpenFishh" target="_blank" rel="noopener" style={{ color: '#777', textDecoration: 'none', fontSize: '0.82rem' }}>GitHub</a>
+                <a href="https://discord.gg/jMwfepkD" target="_blank" rel="noopener" style={{ color: '#777', textDecoration: 'none', fontSize: '0.82rem' }}>Discord</a>
                 <a href="https://github.com/MohdTalib0/OpenFishh/issues" target="_blank" rel="noopener" style={{ color: '#777', textDecoration: 'none', fontSize: '0.82rem' }}>Issues</a>
-                <a href="https://github.com/MohdTalib0/OpenFishh#readme" target="_blank" rel="noopener" style={{ color: '#777', textDecoration: 'none', fontSize: '0.82rem' }}>Docs</a>
+                <a href="https://deepwiki.com/MohdTalib0/OpenFishh" target="_blank" rel="noopener" style={{ color: '#777', textDecoration: 'none', fontSize: '0.82rem' }}>Docs</a>
               </div>
             </div>
           </div>

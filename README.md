@@ -17,7 +17,7 @@
 [![Live Demo](https://img.shields.io/badge/Demo-openfishh.com-0EA5E9)](https://openfishh.com)
 [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/MohdTalib0/OpenFishh)
 
-[Live Demo](https://openfishh.com) | [Documentation](https://deepwiki.com/MohdTalib0/OpenFishh) | [Report Bug](https://github.com/MohdTalib0/OpenFishh/issues)
+[Live Demo](https://openfishh.com) | [Documentation](https://deepwiki.com/MohdTalib0/OpenFishh) | [Discord](https://discord.gg/jMwfepkD) | [Report Bug](https://github.com/MohdTalib0/OpenFishh/issues)
 
 <img src="static/images/screenshot-landing.png" alt="OpenFishh Landing Page" width="100%" />
 
