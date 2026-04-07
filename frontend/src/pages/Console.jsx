@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react'
-import { Github, ArrowRight, ArrowLeft } from 'lucide-react'
+import { Github, ArrowRight, ArrowLeft, RotateCcw } from 'lucide-react'
 import SpawnStep from './steps/SpawnStep'
 import CycleStep from './steps/CycleStep'
 import BeliefStep from './steps/BeliefStep'
@@ -123,6 +123,17 @@ export default function Console() {
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
           <StatusDot status={stepComplete[currentStep] ? 'complete' : 'processing'} />
+          <button onClick={() => { setCurrentStep(0); setStepComplete({}); sessionStorage.removeItem(STORAGE_KEY); window.history.replaceState(null, '', '#demo') }} style={{
+            display: 'flex', alignItems: 'center', gap: 4,
+            padding: '5px 10px', borderRadius: 6,
+            border: '1px solid rgba(255,255,255,0.08)', background: 'transparent',
+            color: '#666', fontSize: '0.68rem', cursor: 'pointer',
+          }}
+          title="Reset demo"
+          >
+            <RotateCcw style={{ width: 11, height: 11 }} />
+            Reset
+          </button>
           <a href="https://github.com/MohdTalib0/OpenFishh" target="_blank" rel="noopener noreferrer"
             style={{
               display: 'flex', alignItems: 'center', gap: 5,
