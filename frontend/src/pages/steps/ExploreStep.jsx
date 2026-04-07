@@ -159,6 +159,23 @@ export default function ExploreStep({ data }) {
           </div>
         </div>
       </div>
+
+      {/* Star CTA */}
+      <div style={{ marginTop: 20, textAlign: 'center' }}>
+        <a href="https://github.com/MohdTalib0/OpenFishh" target="_blank" rel="noopener" style={{
+          display: 'inline-flex', alignItems: 'center', gap: 8,
+          padding: '12px 28px', borderRadius: 50,
+          border: '1px solid rgba(255,255,255,0.1)', background: 'rgba(255,255,255,0.03)',
+          color: '#fff', textDecoration: 'none', fontSize: '0.9rem', fontWeight: 600,
+          transition: 'border-color 0.2s, background 0.2s',
+        }}
+        onMouseOver={e => { e.currentTarget.style.borderColor = 'rgba(245,158,11,0.4)'; e.currentTarget.style.background = 'rgba(245,158,11,0.06)' }}
+        onMouseOut={e => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'; e.currentTarget.style.background = 'rgba(255,255,255,0.03)' }}
+        >
+          <span style={{ color: '#F59E0B', fontSize: '1.1rem' }}>&#9733;</span> Star OpenFishh on GitHub
+        </a>
+        <div style={{ fontSize: '0.68rem', color: '#444', marginTop: 8 }}>If this project helped you, a star means a lot.</div>
+      </div>
     </div>
   )
 }
