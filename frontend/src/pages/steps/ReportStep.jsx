@@ -138,9 +138,7 @@ export default function ReportStep({ data, onComplete, completed }) {
   }, [])
 
   function downloadPDF() {
-    // Create a printable version and trigger print dialog
-    const win = window.open('', '_blank')
-    win.document.write(`<!DOCTYPE html><html><head><title>OpenFishh Blueprint Report</title>
+    const html = `<!DOCTYPE html><html><head><meta charset="utf-8"><title>OpenFishh Blueprint Report</title>
       <style>
         body { font-family: 'Georgia', 'Times New Roman', serif; max-width: 700px; margin: 40px auto; padding: 0 24px; color: #1a1a1a; line-height: 1.7; font-size: 14px; }
         h1 { font-size: 22px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 4px; font-family: 'Helvetica Neue', Arial, sans-serif; }
@@ -151,10 +149,14 @@ export default function ReportStep({ data, onComplete, completed }) {
         hr { border: none; border-top: 1px solid #ddd; margin: 24px 0; }
         li { margin-bottom: 4px; }
         a { color: #0066cc; }
-        @media print { body { margin: 20px; } }
-      </style></head><body>${reportRef.current?.innerHTML || ''}</body></html>`)
-    win.document.close()
-    setTimeout(() => { win.print() }, 300)
+      </style></head><body>${reportRef.current?.innerHTML || ''}</body></html>`
+    const blob = new Blob([html], { type: 'text/html' })
+    const url = URL.createObjectURL(blob)
+    const a = document.createElement('a')
+    a.href = url
+    a.download = 'OpenFishh-Blueprint-Report.html'
+    a.click()
+    URL.revokeObjectURL(url)
   }
 
   const visibleReport = REPORT_MD.slice(0, visibleChars)
