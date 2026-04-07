@@ -7,7 +7,7 @@ dist/
 __pycache__/
 *.pyc
 *.pyo
-data/
+backend/data/
 *.db
 *.sqlite
 .vite/
